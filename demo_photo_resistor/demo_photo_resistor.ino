@@ -15,10 +15,10 @@ void loop(){
   val = analogRead(0);// Asigns the sensor value in A0 to the variable.
   Serial.println(val);// Prints the value in the Serial Port
 
-if (val >200 and val <400)  digitalWrite(trans_base, HIGH),digitalWrite (warning, LOW); // If the sensor outcome is higher than 300 and less than 610, then activates the transistor and disable the warning pin. 
+if (val >150 and val <300)  digitalWrite(trans_base, HIGH),digitalWrite (warning, LOW); // If the sensor outcome is higher than 300 and less than 610, then activates the transistor and disable the warning pin. 
   else digitalWrite(trans_base, LOW);
 
-if (val > 400)  digitalWrite(trans_base, HIGH), digitalWrite (warning, HIGH); // If the sensor outcome is higher than 610, then deactivates the transistor and activates the protection using the warning pin. 
+if (val > 300)  digitalWrite(trans_base, HIGH), digitalWrite (warning, HIGH); // If the sensor outcome is higher than 610, then deactivates the transistor and activates the protection using the warning pin. 
   
   }
   
