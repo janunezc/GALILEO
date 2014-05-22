@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marie Curi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            function turnOn(){
+                ajaxCall("ON");
+            }
+            
+            function turnOff(){
+                ajaxCall("OFF");
+            }
+            
+            function blink(){
+                ajaxCall("BLINK");
+            }
+            
+            function ajaxCall(command){
+                $.ajax({
+                    url:"http://192.168.1.114:1337?command=" + command,
+                    success:function(response) {
+                        alert("OK: " + response);
+                    }
+                });                
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+        <button onclick="turnOn()">TURN ON</button>
+        <button onclick="turnOff()">TURN OFF</button>
+        <button onclick="blink()">BLINK</button>
+    </body>
+</html>
