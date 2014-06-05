@@ -29,8 +29,9 @@ function serverHandler(req, res) {
                 board.digitalWrite(targetPin, 0);            
                 break;
             case "/?command=BLINK":
+                clearInterval(galileoInterval);
                 galileoInterval = setInterval(galileoLoopHandler, galileoIntervalTime);
-                break
+                break;
         }
         
         res.writeHead(200, {'Content-Type': 'text/html'});
