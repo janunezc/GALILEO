@@ -21,6 +21,7 @@ void loop() {
       Serial.print(x,HEX);
       Serial.print(", ");
     }
-    Serial.println("OK");
+    Serial.print(millis());
+    Serial.println("OK |");
   }
 }
