@@ -5,7 +5,7 @@
         <title>IOT ENGINE</title>
     </head>
     <body>
-        HELLO WORLD!
+        Welcome to the IoT Engine
         <?php
         $d1 = new DateTime();
         echo $d1->format("Y-m-d H:i:s.u");
