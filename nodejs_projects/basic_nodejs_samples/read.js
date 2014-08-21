@@ -26,13 +26,21 @@ function galileoReadyHandler() {
  * @param data
  * @returns {undefined}
  */
+var readtimes = 0;
 function readHandler(data) {
-    logMessage("Read Handler Begins!");
+    
+    if (readtimes<5) {
+        readtimes++;
+        logMessage("Read Handler Begins!");
+    }
     if (previousData !== data) {
         logMessage("Data Changed!");
         previousData = data;
         logMessage("New Data: " + data);
     }
+    if (readtimes<5) {
+        logMessage("Read Handler END!");
+    }    
 }
 
 /***
